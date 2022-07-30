@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NOOK NOOK</title>
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <!-- icono de menú para la navbar -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+
+<body>
+
+  <!-- ============= Cabecera de la página  ============== -->
+  <header>
+    <!-- Contenedor del logo y lista de elementos -->
+    <nav class="navbar">
+      <!-- Fondo del logo y texto -->
+      <div class="logo">
+        <a href="../../index.html"><b>NOOK NOOK</b></a>
+      </div>
+
+      <!-- creamos un checkbox y lo abrimos al seleccionar el label (responsive)-->
+      <input type="checkbox" id="barra_desplegable">
+      <label for="barra_desplegable">
+        <i class="ri-menu-line"></i>
+      </label>
+      <!-- Fin del contenedor  del label responsive -->
+      <div class="menu_enlaces_navbar">
+        <!-- Lista de enlaces del navbar -->
+        <ul class="lista_enlaces">
+          <!-- Elemento de lista: productos -->
+          <li class="dropdown">
+            <a href="#" class="enlace_item">Productos</a>
+            <div class="dropdown-contenedor">
+
+              <ul class="lista_subenlaces">
+                <!-- productos-hombres -->
+                <li class="item_hombre" id="mn1">
+                  <a class="btn" href="#mn1">Hombre</a>
+                  <!-- Categorias de producstos-hombres -->
+                  <div class="dropdown_contenedor-categorias">
+                    <a class="categorias_item" href="../seccionProductos/hombre-chamarras.html">Chamarras</a>
+                    <a class="categorias_item" href="../seccionProductos/hombre-playeras.html">Playeras</a>
+                    <a class="categorias_item" href="../seccionProductos/hombre-pantalones.html">Pantalones</a>
+                  </div>
+                </li>
+
+                <!-- priductos- mujeres -->
+                <li class="item_mujer" id="mn2">
+                  <a class="btn" href="#mn2">Mujer</a>
+                  <!-- Categorias de producstos-hombres -->
+                  <div class="dropdown_contenedor-categorias">
+                    <a class="categorias_item" href="../seccionProductos/mujer-pantalones.html">Pants</a>
+                    <a class="categorias_item" href="../seccionProductos/mujer-chamarras.html">Chamarras</a>
+                    <a class="categorias_item" href="../seccionProductos/mujer-playeras.html">Playeras</a>
+                    <a class="categorias_item" href="../seccionProductos/mujer-blusas.html">Blusas</a>
+                  </div>
+                </li>
+              </ul>
+
+
+            </div>
+          </li>
+          <!-- Fin de elemento de lista : producto -->
+
+
+          <!-- Elemento de lista carritos -->
+          <li class="enlace_secciones">
+            <a class="enlace_item" href="../carrito.html"> Carrito </a>
+          </li>
+          <!-- Fin de elemento de lista: carrito -->
+
+          <!-- Elemento de lista fechas & descuentos -->
+          <li class="enlace_secciones">
+            <a class="enlace_item" href="../fechas_descuentos.html"> Fechas & descuentos </a>
+          </li>
+          <!-- Fin de elemento de lista fechas & descuentos -->
+
+          <!-- Elemento de lista:  Quienes somos-->
+          <li class="enlace_secciones">
+            <a class="enlace_item" href="../quienes_somos.html"> Quienes somos </a>
+          </li>
+          <!-- Fin de elemento de lista: Quienes somos -->
+
+          <!-- Elemento de lista: contactanos -->
+          <li class="enlace_secciones">
+            <a class="enlace_item" href="../contactanos.html"> Contactanos </a>
+          </li>
+          <!-- Fin de elemento de lista: contactanos -->
+
+        </ul>
+        <!-- Fin de la lista de enlaces en la navbar -->
+      </div>
+    </nav>
+  </header>
+  <!-- ============= fin de cabecera de la página  ============== -->
+
+  <!-- ============= Contenido principal de la página  ============== -->
+  <main>
+    <!-- Sección 1: Tiene el contenedor de contactanos  -->
+    <section>
+
+      <div class="contenedor_principal-filtroCategorias-listaProductos">
+        <div class="titulo_categoria">
+          <h2>PLAYERAS</h2>
+        </div>
+        <div class="contenedor_filtroCategorias">
+          <!-- Fila 1: tiene los contenedores de filtros y productos disponibles -->
+
+          <!-- Filtro género -->
+          <div class="filtro_genero">
+            <h2>Género</h2>
+            <input type="radio" name="genero" value="Hombre">
+            <label for="">Hombre</label>
+            <br>
+            <input type="radio" name="genero" value="Mujer">
+            <label for="">Mujer</label>
+          </div>
+          <!-- Fin de filtro género -->
+
+          <!--Filtro categorias -->
+          <div class="filtro_categoria">
+            <h2>Categoría</h2>
+            <div class="row">
+              <div class="col-sm-5">
+                <input type="radio" name="categorías" value="playera">
+                <label for="">Playera</label>
+              </div>
+              <div class="col-sm-5">
+                <input type="radio" name="categorías" value="chamarra">
+                <label for="">Chamarra</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-5">
+                <input type="radio" name="categorías" value="camisa">
+                <label for="">Camisa</label>
+              </div>
+              <div class="col-sm-5">
+                <input type="radio" name="categorías" value="sudadera">
+                <label for="">Sudadera</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-5">
+                <input type="radio" name="categorías" value="pantalon">
+                <label for="">Pantalón</label>
+              </div>
+              <div class="col-sm-5">
+                <input type="radio" name="categorías" value="short">
+                <label for="">Short</label>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de filtro categorías -->
+
+          <!-- Filtro precios -->
+          <div class="filtro_precio">
+            <h2>Precio</h2>
+            <input type="radio" name="precios" value="precio">
+            <label for="">$100 - $500</label>
+            <br>
+            <input type="radio" name="precios" value="precio">
+            <label for="">Mayor a $500</label>
+          </div>
+          <!--Fin de filtro precios  -->
+
+
+        </div>
+        <!-- Fin del  contenedor filtros aplicados -->
+
+        <!-- Contenedor : lista de productos de la categoria -->
+        <div class="contenedor_listaProductos">
+
+
+          <!-- Card producto 1 -->
+          <div class="card_producto_hombre">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/playera_ballena.png" alt="">
+            </div>
+
+            <div class="card_producto-texto_boton">
+              <div class="card_producto-texto">
+                <h2>Ballenita <br> $700 MX</h2>
+              </div>
+              <div class="card_boton">
+                <a href="../../pages/carrito.html">
+                  <button>
+                    <img src="../../imagenes/cart.png" width="35" height="35">
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de card producto 1 -->
+
+          <!-- Card prooducto 2-->
+          <div class="card_producto_hombre">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/playera_ballena.png" alt="">
+            </div>
+
+            <div class="card_producto-texto_boton">
+              <div class="card_producto-texto">
+                <h2>Ballenita <br> $700 MX</h2>
+              </div>
+              <div class="card_boton">
+                <a href="../../pages/carrito.html">
+                  <button>
+                    <img src="../../imagenes/cart.png" width="35" height="35">
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de card producto 2 -->
+
+          <!-- Card producto 3 -->
+          <div class="card_producto_hombre">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/playera_ballena.png" alt="">
+            </div>
+
+            <div class="card_producto-texto_boton">
+              <div class="card_producto-texto">
+                <h2>Ballenita <br> $700 MX</h2>
+              </div>
+              <div class="card_boton">
+                <a href="../../pages/carrito.html">
+                  <button>
+                    <img src="../../imagenes/cart.png" width="35" height="35">
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de card producto 3 -->
+
+          <!-- Fila 2 -->
+          <!-- Card producto 1 -->
+          <div class="card_producto_hombre">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/playera_ballena.png" alt="">
+            </div>
+
+            <div class="card_producto-texto_boton">
+              <div class="card_producto-texto">
+                <h2>Ballenita <br> $700 MX</h2>
+              </div>
+              <div class="card_boton">
+                <a href="../../pages/carrito.html">
+                  <button>
+                    <img src="../../imagenes/cart.png" width="35" height="35">
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de card producto 1 -->
+
+          <!-- Card prooducto 2-->
+          <div class="card_producto_hombre">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/playera_ballena.png" alt="">
+            </div>
+
+            <div class="card_producto-texto_boton">
+              <div class="card_producto-texto">
+                <h2>Ballenita <br> $700 MX</h2>
+              </div>
+              <div class="card_boton">
+                <a href="../../pages/carrito.html">
+                  <button>
+                    <img src="../../imagenes/cart.png" width="35" height="35">
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de card producto 2 -->
+
+          <!-- Card producto 3 -->
+          <div class="card_producto_hombre">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/playera_ballena.png" alt="">
+            </div>
+
+            <div class="card_producto-texto_boton">
+              <div class="card_producto-texto">
+                <h2>Ballenita <br> $700 MX</h2>
+              </div>
+              <div class="card_boton">
+                <a href="../../pages/carrito.html">
+                  <button>
+                    <img src="../../imagenes/cart.png" width="35" height="35">
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de card producto 3 -->
+
+          <!-- Fin de fila 2 -->
+          <!-- Fila 3 -->
+
+          <!-- Card producto 1 -->
+          <div class="card_producto_hombre">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/playera_ballena.png" alt="">
+            </div>
+
+            <div class="card_producto-texto_boton">
+              <div class="card_producto-texto">
+                <h2>Ballenita <br> $700 MX</h2>
+              </div>
+              <div class="card_boton">
+                <a href="../../pages/carrito.html">
+                  <button>
+                    <img src="../../imagenes/cart.png" width="35" height="35">
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de card producto 1 -->
+
+          <!-- Card prooducto 2-->
+          <div class="card_producto_hombre">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/playera_ballena.png" alt="">
+            </div>
+
+            <div class="card_producto-texto_boton">
+              <div class="card_producto-texto">
+                <h2>Ballenita <br> $700 MX</h2>
+              </div>
+              <div class="card_boton">
+                <a href="../../pages/carrito.html">
+                  <button>
+                    <img src="../../imagenes/cart.png" width="35" height="35">
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de card producto 2 -->
+
+          <!-- Card producto 3 -->
+          <div class="card_producto_hombre">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/playera_ballena.png" alt="">
+            </div>
+
+            <div class="card_producto-texto_boton">
+              <div class="card_producto-texto">
+                <h2>Ballenita <br> $700 MX</h2>
+              </div>
+              <div class="card_boton">
+                <a href="../../pages/carrito.html">
+                  <button>
+                    <img src="../../imagenes/cart.png" width="35" height="35">
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de card producto 3 -->
+
+
+
+        </div>
+        <!-- Fin del contenedor -->
+      </div>
+    </section>
+    <!-- Fin de la sección del contenido principal -->
+  </main>
+  <!-- ============= Fin del contenido principal de la página  ============== -->
+
+  <!-- ============= Pie de página ============= -->
+  <footer>
+    <div class="contenedor_footer">
+      <!-- columna 1: titulo y descripción -->
+      <div class="footer_seccion1_logo">
+        <h3>NOOK NOOK</h3>
+        <p>Está página fue creada <br>
+          con fines educativos
+        </p>
+      </div>
+      <!--Columna 2: contactos que tiene la empresa  -->
+      <div class="footer_seccion2_contacto">
+        <h3>Sobre nosotros</h3>
+        <p>nook_nook@gmail.com</p>
+        <p>México, CDMX, Viaducto</p>
+        <p>553883838383</p>
+      </div>
+      <!-- columna 3: atención a cliente -->
+      <div class="footer_cliente">
+        <h3>Atencion al cliente</h3>
+        <p>Terminos y condiciones</p>
+
+        <p>Preguntas frecuentes</p>
+
+      </div>
+      <!-- columna 4: redes sociales -->
+      <div class="footer_seccion4_redes">
+        <h3>Siguenos en:</h3>
+        <a href="https://www.facebook.com">Facebook</a>
+        <br>
+        <a href="https://www.twitter.com">Twitter</a>
+        <br>
+        <a href="https://www.Instagram.com">Instagram</a>
+      </div>
+    </div>
+  </footer>
+  <!-- ============= Fin de pie de página ============= -->
+</body>
+
+</html>

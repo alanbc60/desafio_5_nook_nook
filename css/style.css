@@ -1,0 +1,2099 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    /*elimina el scroll del eje x*/
+}
+
+header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+}
+
+.navbar {
+    position: absolute;
+
+    flex-wrap: wrap;
+    /*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
+    justify-content: space-between;
+    /*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
+    border-bottom: 15px black;
+    background-color: azure;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+/* === Personalización de logo === */
+
+/* contenedor logo */
+.logo {
+    margin-right: 50px;
+    background-color: red;
+    color: white;
+    width: 130px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+/* texto logo */
+.logo a {
+    padding-top: 10px;
+    color: white;
+    text-decoration: none;
+    /*Quita el subrayado del enlace*/
+    display: inline-block;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* modificar el contenedor logo cuando pasamos en el logo */
+.logo:hover {
+    background-color: white;
+    color: red;
+}
+
+/* Modificar el texto al pasar el cursor */
+.logo a:hover {
+    color: red;
+}
+
+/* Fin de la personalización de logo */
+
+
+/* Contenedor principal de productos*/
+.lista_enlaces {
+    list-style: none;
+    /*   quitar viñetas a los números*/
+    display: flex;
+    /*colocar elemento uno a lado de otro hasta que haya espacio */
+    gap: 10px;
+    /*Espaciado entre botones*/
+    background-color: white;
+    margin-right: 5px;
+}
+
+/* ocultar el icono de menu hamburguesa y casilla de credito */
+#barra_desplegable,
+.navbar label {
+    display: none;
+    /*Ocultar la casilla de verificación y la etiqueta en pantallas grandes.*/
+}
+
+/* Personalización general de los enlaces(tambien usado en las categorias de productos) */
+.enlace_item {
+    display: inline-block;
+    color: red;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.enlace_item:hover {
+    background-color: red;
+    color: white;
+}
+
+/* == Personalización  del contendor de la lista de enlaces  ===*/
+
+
+/* contenedor principal donde se encuentra producto-hombre y producto-mujer */
+.dropdown-contenedor {
+    display: none;
+    position: absolute;
+    /*se sobrepone sobre la la lista*/
+    background-color: white;
+    height: 290px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* El cursor abre un contenedor cuando esta en productos */
+.dropdown:hover .dropdown-contenedor {
+    display: block;
+    /*uno abajo de otro*/
+}
+
+/* Al pasar el cursor en  una categoria*/
+.dropdown-contenedor a:hover {
+    background-color: white;
+    color: red;
+}
+
+/* contendor tipo lista de productos */
+.lista_subenlaces {
+    list-style: none;
+    /*   quitar viñetas a los números*/
+    display: block;
+    gap: 10px;
+    /*Espaciado entre botones*/
+    background-color: white;
+    margin-right: 5px;
+}
+
+/* Texto Hombre y Mujer */
+.dropdown span {
+    color: red;
+    font-size: 15px;
+}
+
+
+
+/* == Personalización de categorias == */
+
+/* Contenedor principal de las categorias hombre y mujer */
+.dropdown_contenedor-categorias {
+    display: none;
+    /*para esconder el contenedor*/
+    background-color: red;
+    width: 160px;
+    max-height: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    transition: max-height .6s ease-out;
+}
+
+
+.item_mujer:hover .dropdown_contenedor-categorias {
+    max-height: 400px;
+    display: block;
+}
+
+.item_mujer:hover .dropdown_contenedor-categorias .categorias_item {
+    display: block;
+}
+
+.item_hombre:hover .dropdown_contenedor-categorias .categorias_item {
+    display: block;
+}
+
+
+.item_hombre:hover .dropdown_contenedor-categorias {
+    max-height: 400px;
+    display: block;
+}
+
+
+/* 
+.item_hombre:target .dropdown_contenedor-categorias_hombre{
+    max-height: 300px;
+}
+ */
+/* enlaces de las categorias */
+.dropdown_contenedor-categorias .categorias_item {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: none;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+/* Cuando pasamos el cursor en productos mantenemos el contenedor de categorias */
+.dropdown:hover .dropdown_contenedor-categorias {
+    display: block;
+    /*uno abajo de otro*/
+}
+
+/* Fin de personalización de categorias */
+
+
+
+/* Footer */
+.contenedor_footer {
+    width: auto;
+    margin-top: auto;
+    display: grid;
+    gap: 10px;
+    box-shadow: 6px 1px 10px 6px red;
+    margin-top: 10px;
+    background-color: red;
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: repeat(4, 1fr);
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: 230px;
+    grid-template-areas:
+        "footer_seccion1_logo footer_seccion2_contacto footer_cliente footer_seccion4_redes";
+}
+
+.footer_seccion1_logo {
+    color: white;
+    margin: 20px;
+    text-align: center;
+}
+
+.footer_seccion2_contacto {
+    color: white;
+    margin: 17px;
+    text-align: center;
+}
+
+.footer_cliente {
+    color: white;
+    margin: 17px;
+    text-align: center;
+}
+
+.footer_seccion4_redes {
+    color: white;
+    margin: 17px;
+    text-align: center;
+
+}
+.footer_seccion4_redes a{
+    color: white;
+    margin: 17px;
+    text-align: center;
+
+}
+
+
+/* ================ Página inicio: imagen principal y texto ================ */
+
+/* contenedor principal */
+
+.contenedor_principal {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 40px;
+    background-color: azure;
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: repeat(3, 1fr);
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: 400px 100px 900px;
+
+    /* acomodar el grid */
+    grid-template-areas:
+        "principal_imagen principal_texto principal_texto"
+        /*fila 1*/
+        "titulo_novedades titulo_novedades titulo_novedades"
+        /*fila 2*/
+        "contenedor_novedades contenedor_novedades contenedor_novedades"
+        /*fila 3*/
+
+}
+
+/* contenedor de la imagen */
+.contenedor_principal-imagen {
+    margin-top: 90px;
+    grid-area: principal_imagen;
+    background-color: steelblue;
+
+}
+
+.contenedor_principal-imagen img {
+    width: 100%;
+    height: 340px;
+    min-height: 350px;
+    object-fit: cover;
+    transition-delay: 1s;
+    transition: width 3s;
+}
+.contenedor_principal-imagen img:hover {
+    width: 700px;
+}
+
+/* contenedor donde esta el texto principal y el boton */
+.contenedor_principal-texto {
+    margin-top: 90px;
+    grid-area: principal_texto;
+    background-color: azure;
+}
+.contenedor_principal-texto h1{
+    color: red;
+
+}
+
+.contenido_principal-texto {
+    font-size: 18px;
+    height: auto;
+    width: 92%;
+    margin-right: 230px;
+    margin-left: 20px;
+}
+
+.contenedor_boton_checar {
+    margin-left: 20px;
+}
+
+/* boton checar(se usa en la página carrito igual) */
+.btn_checar {
+    height: 40px;
+    display: inline-block;
+    text-decoration: none;
+    background: red;
+    padding: 9px 40px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 8px 0 #EC2D53;
+    transition: all 0.2s;
+    animation: btn_checar infinite;
+    animation-duration: 20s;
+}
+/* animacion del boton checar */
+@keyframes btn_checar {
+    from {
+        background-color: red;
+        box-shadow: 0 8px 0 red;
+    }
+    to {
+        background-color: #0095ff;
+        box-shadow: 0 8px 0 #0095ff;
+    }
+}
+.btn_checar:hover {
+    color: #fff;
+}
+
+.btn_checar:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 red;
+}
+
+/* Fin de la personalización del texto principal con imagen */
+
+
+/* ================ Novedades ================ */
+
+/* Personalización del contenedor con texto animado(pensado para la sección inicio y Quienes somos) */
+.titulo_novedades {
+    grid-area: titulo_novedades;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    display: flex;
+
+}
+
+/* Texto antes de la animación */
+.titulo_novedades h2 {
+    position: static;
+    font-size: 44px;
+    color: white;
+    -webkit-text-stroke: 5px white;
+    text-transform: uppercase;
+    /*mayusculas*/
+}
+
+
+/* contenedor principal novedades */
+.contenedor_novedades {
+    grid-area: contenedor_novedades;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* card del contenedor novedades */
+.card_novedades {
+    background-color: rgba(255, 0, 0, 0.721);
+    width: 295px;
+    height: 400px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 30px;
+    box-shadow: 5px 5px 20px red;
+
+}
+
+.card_novedades_imagen {
+    width: 280px;
+    height: 310px;
+    border-radius: 3px;
+    padding-top: 13px;
+    margin-left: 9px;
+    /* background-color: blue; */
+    /* border: 2px solid rgba(255, 255, 255, 0.2); */
+
+}
+
+
+/* Auste de tamaño de la imagen de cada card */
+.card_novedades_imagen img {
+    width: 276px;
+    height: 310px;
+    transition-delay: 1s;
+    transition: width 3s;
+}
+.card_novedades_imagen img:hover {
+    height: 370px;
+}
+
+/* contenedor de boton y texto del card */
+.card-texto_boton {
+    display: flex;
+    width: 276px;
+    height: 65px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 3px;
+    border-top: 50px;
+    margin-left: 9px;
+}
+
+/* Texto de cada card */
+.card_texto h2 {
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+/* boton carrito de compras */
+.card_boton {
+    width: 50px;
+    height: 50px;
+    margin-left: 138px;
+    margin-top: 10px;
+}
+
+
+/* ================ Página carrito ================ */
+
+
+/* contenedor principal */
+
+
+.carrito-texto_principal {
+    background-color: red;
+    color: white;
+    text-align: center;
+    margin-top: 90px;
+}
+
+
+
+
+.carrito-texto_principal h1 {
+    margin-top: 10px;
+    font-size: 40px;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+/* personalizacion del contenedor de productos */
+.card_producto {
+    display: grid;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: repeat(3, 1fr);
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: 200px;
+    /* acomodar el grid */
+    grid-template-areas:
+        "contenedor_imagen_producto contenedor_texto_productos contenedor_texto_productos";
+    /*fila 2*/
+}
+
+
+
+/* personalizacion del card producto */
+
+/* imagen del producto */
+.carrito_imagen_producto {
+    background-color: red;
+    grid-area: contenedor_imagen_producto;
+}
+
+.carrito_imagen_producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.carrito_imagen_producto img:hover {
+    transform: scale(1.04);
+}
+
+/* contenedor hijo de card_producto: Texto producto */
+.texto-producto {
+    grid-area: contenedor_texto_productos;
+    background-color: white;
+    width: 100%;
+
+}
+
+
+/* Boton de eliminar producto en card producto */
+.eliminar_producto {
+    bottom: 20px;
+    margin-left: 22px;
+    padding: 10px 25px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: end;
+
+}
+
+.eliminar_producto:hover {
+    background-color: skyblue;
+    color: white;
+    font-weight: 600;
+    border: 1px solid white;
+
+}
+
+/* Entrada de texto para aumentar las cantidades */
+.cantidad_producto input {
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+}
+
+.cantidad_producto input:hover {
+    background-color: red;
+    color: white;
+
+}
+
+/* personalizacion de componentes del contenedor precio total */
+
+
+/* Texto del card pagar */
+.carrito-contenedor_precios p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Boton de card pagar(personalización establecida anteriormente) */
+.carrito-contenedor_precios a {
+    margin-left: 80px;
+
+}
+
+/* contenedor Descuento */
+
+/* personalizacion princiapl del text field descuentos*/
+.contenedor_input {
+    width: 280px;
+    margin-top: 20px;
+
+}
+
+/* personalizacion del contendor (text field) */
+.contenedor_input .text-input {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid red;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    transition: all .3s;
+    color: red;
+}
+
+/* Personalizacion  del contenedor(text-input) cuando cliqueamos el input */
+.text-input:focus {
+    border: 2px solid red;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* personalizacion del label Descuento */
+.contenedor_input label {
+    /* left: 0px; */
+    margin-bottom: 10px;
+    transition: all 0.2s;
+    z-index: 1;
+    color: red;
+    font-size: 20px;
+}
+
+
+/* Error: Label "Descuento"  no se mueve al ingresar en el input */
+/* .text_input:focus label{
+    margin-bottom: 110px;
+    color: black;
+    font-size: 20px;
+} */
+
+/* texto placeholder del input */
+.text-input::placeholder {
+    font-size: 20px;
+    opacity: 1;
+    transition: all .3s;
+}
+
+
+/* Texto ingrese un descuento despues hacer de cliquear el input field */
+.text-input:focus::placeholder {
+    opacity: 0;
+    animation-delay: 0.2s;
+}
+
+
+/* ============= pagina descuentos =========== */
+.contenedor_principal-descuentos-fechas {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    margin-top: 80px;
+    gap: 10px;
+    background-color: white;
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: repeat(3, 1fr);
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: 100px auto auto 100px auto;
+
+    /* acomodar el grid */
+    grid-template-areas:
+        "titulo_descuentos titulo_descuentos titulo_descuentos"
+        /*fila 1*/
+        "texto_descuentos texto_descuentos texto_descuentos"
+        /*fila 2*/
+        "contenedor_descuentos contenedor_descuentos contenedor_descuentos"
+        "titulo_fechas titulo_fechas titulo_fechas "
+        /*fila 2*/
+        "contenedor_fechas contenedor_fechas contenedor_fechas";
+    /*fila 2*/
+
+}
+
+/* Contenedor del titulo principal de descuentos */
+.titulo_descuentos {
+    grid-area: titulo_descuentos;
+    color: white;
+    text-align: center;
+    background-color: red;
+    font-size: 100%;
+}
+
+.informacion_descuentos_fechas {
+    padding: 10px;
+    grid-area: texto_descuentos;
+    font-size: 20px;
+}
+
+/* contenedor y card de la seccion descuentos */
+.contenedor_cards_descuentos {
+    grid-area: contenedor_descuentos;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: chartreuse; */
+    margin-top: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.titulo_fechas {
+    grid-area: titulo_fechas;
+    color: white;
+    text-align: center;
+    background-color: blue;
+    font-size: 100%;
+}
+
+.contenedor_cards_fechas {
+    grid-area: contenedor_fechas;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: violet; */
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+/* Texto tiulo descuentos */
+.titulo_descuentos h2 {
+    font-size: 70px;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.informacion_descuentos_fechas p {
+    font-style: italic;
+}
+
+/* personalizacion del contenedor card descuentos */
+
+.card_descuento {
+    width: 400px;
+    height: 220px;
+    background-color: red;
+    margin-left: 12px;
+    margin-top: 23px;
+    border-radius: 20px;
+
+}
+
+.card_fecha {
+    width: 400px;
+    height: 220px;
+    background-color: white;
+    margin-left: 12px;
+    margin-top: 23px;
+    animation: card_fecha 9s infinite;
+    transform: skew(20deg);
+    animation-direction: alternate;
+    opacity: .7;
+}
+@keyframes card_fecha {
+    0% {
+      transform: skewX(20deg);
+    }
+    100% {
+      transform: skewX(-20deg);
+    }
+  }
+
+/* como esta al principio */
+.card_descuento .cobertura_img_card {
+    /* background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(150px); */
+    background-color: red;
+    height: 220px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+    border: 5px solid rgba(255, 255, 255, 1);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.7);
+}
+
+.card_descuento:hover .cobertura_img_card {
+    display: none;
+}
+
+/* Texto del card_descuento */
+.contenedor_cards_descuentos .card_descuento .texto_card_descuento {
+    width: 335px;
+    height: 200px;
+    margin-left: 20px;
+    justify-content: center;
+    /* background-color: yellow; */
+    display: none;
+}
+
+.card_descuento:hover .texto_card_descuento {
+    /* position: absolute; */
+    display: block;
+}
+
+.texto_card_descuento h3 {
+    color: red;
+    margin-bottom: 5px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Titulo y fondo de la seccion fechas importantes */
+
+.titulo_fechas h2 {
+    font-size: 70px;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+/* ================= Pagina Quienes somos ==================*/
+
+.contenedor_principal_quienes-somos {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    margin-top: 80px;
+    gap: 10px;
+    background-color: white;
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: repeat(3, 1fr);
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: auto auto auto 100px auto;
+
+    /* acomodar el grid */
+    grid-template-areas:
+        "titulo_QuienesSomos titulo_QuienesSomos titulo_QuienesSomos"
+        /*fila 1*/
+        "texto_conocenos texto_conocenos titulo_amigoMes"
+        /*fila 2*/
+        "texto_conocenos texto_conocenos imagen_amigoEspecial"
+        /*fila 2*/
+        "titulo_amigos titulo_amigos titulo_amigos "
+        /*fila 3*/
+        "contenedor_marcas contenedor_marcas contenedor_marcas";
+    /*fila 4*/
+}
+
+.contenedor_titulo_quienesSomos {
+    grid-area: titulo_QuienesSomos;
+    background-color: paleturquoise;
+
+}
+
+/* Contenedor de titulo y parrafo de la empresa */
+.conocenos_textos {
+    grid-area: texto_conocenos;
+    margin-left: 20px;
+    font-size: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.contenedor_titulo_amigoMes {
+    grid-area: titulo_amigoMes;
+    font-style: italic;
+    animation: titulo_amigoMes 14s infinite;
+}
+@keyframes titulo_amigoMes {
+    0% {
+        transform: skewX(20deg);
+      }
+      100% {
+        transform: skewX(-20deg);
+    }
+}
+
+.contenedor_amigoEspecial_instagram {
+    grid-area: imagen_amigoEspecial;
+    width: 300px;
+    height: 420px;
+    /* background-color: blue; */
+    margin-left: 20px;
+}
+
+.contenedor_amigoEspecial_instagram:hover {
+    border: 3px solid silver;
+    box-shadow: 4px 4px 13px rgba(255, 44, 44, 0.8);
+    transform: scale(1.1);
+}
+
+
+.titulo_amigos {
+    grid-area: titulo_amigos;
+    /* background-color: #0095ff; */
+    color: #0095ff;
+    text-align: center;
+    font-size: 190px;
+    padding-bottom: 120px;
+}
+
+.titulo_amigos h2 {
+    font-size: 90px;
+    font-family: cursive;
+
+}
+
+/* Contenedor de cards de marcas */
+.contenedor-marcas {
+    grid-area: contenedor_marcas;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card_instagram_marca {
+    background-color: blue;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 22px;
+    margin-top: 13px;
+}
+.card_instagram_marca:hover{
+    transform: scale(1.05);
+}
+
+
+
+/* Fin de la pagina Quienes Somos */
+
+
+
+/* ==================pagina productos-hombre-mujer   ========== */
+
+
+.contenedor_principal-filtroCategorias-listaProductos {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    margin-top: 100px;
+    gap: 10px;
+    background-color: white;
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: repeat(3, auto);
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: auto auto;
+
+    grid-template-areas:
+        "titulo_categoria titulo_categoria titulo_categoria"
+        /*fila 1*/
+        "filtro_categorias contenedor_cards_productos contenedor_cards_productos";
+}
+
+/* contenedores hijos */
+.titulo_categoria {
+    grid-area: titulo_categoria;
+    width: 500px;
+    color: white;
+    min-width: 320px;
+    text-align: center;
+    margin-top: 31px;
+    background-color: #0095ff;
+    font-size: 100%;
+}
+
+.contenedor_filtroCategorias {
+    grid-area: filtro_categorias;
+    width: 350px;
+    height: 400px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-color: #0095ff;
+
+    border-radius: 15px;
+    padding-left: 20px;
+}
+
+.contenedor_listaProductos {
+    grid-area: contenedor_cards_productos;
+    display: flex;
+    background-color: #0095ff;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    justify-content: center;
+    /* margin-left: 1px; */
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+
+
+/* Fin de  contenedores hijos */
+
+
+/* personalizacion del contenedor titulo_categoria */
+.titulo_categoria h2 {
+    font-size: 70px;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+
+.filtro_genero {
+    width: 150px;
+    height: 100px;
+    /* background-color: blue; */
+    margin-bottom: 10px;
+    color: #0095ff;
+
+}
+
+.filtro_categoria {
+    width: 250px;
+    height: 150px;
+    display: inline;
+    flex-wrap: wrap;
+    /* background-color: brown; */
+    color: #0095ff;
+}
+
+.filtro_precio {
+    width: 150px;
+    height: 100px;
+    /* background-color: blue; */
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 40px;
+    color: #0095ff;
+    display: inline;
+    flex-wrap: wrap;
+}
+
+
+
+
+/* Ocultar el scrollbar de la  lista productos*/
+.contenedor_listaProductos::-webkit-scrollbar {
+    display: none;
+}
+
+.card_producto_hombre {
+    background-color: white;
+    width: 230px;
+    height: 340px;
+    margin-top: 20px;
+    margin-left: 15px;
+    padding-right: 30px;
+    box-shadow: 2px 2px 6px 2px #0095ff;
+    margin-bottom: 23px;
+    border-radius: 12px;
+    transition-delay: 1s;
+    transition: width 3s;
+}
+.card_producto_hombre:hover {
+transform: scale(1.06);
+}
+
+
+/* Auste de tamaño de la imagen de cada card */
+.card_producto_imagen img {
+    padding-top: 10px;
+    width: 215px;
+    height: 270px;
+    object-fit: cover;
+    margin-left: 6px;
+}
+
+
+/* contenedor de boton y texto del card */
+.card_producto-texto_boton {
+    display: flex;
+    flex-wrap: wrap;
+    width: 215px;
+    height: 65px;
+    margin-left: 6px;
+    padding-left: 10px;
+    background-color: #0095ff;
+    /* border-radius: 5px; */
+}
+
+.card_producto-texto h2 {
+    font-size: 20px;
+    font-weight: bold;
+    height: auto;
+    width: 130px;
+    color: #fff;
+}
+
+.card_boton_comprar {
+    display: none;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.card_producto-texto_boton:hover .card_boton_comprar {
+    display: block;
+}
+
+
+
+/* =================== página contactanos ================*/
+
+.contenedor_principal-contactanos {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    margin-top: 100px;
+    gap: 10px;
+    background-color: white;
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: repeat(2, auto);
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: 100px 300px 300px;
+
+    /* acomodar el grid */
+    grid-template-areas:
+        "titulo_contactanos titulo_contactanos"
+        /*fila 1*/
+        "contenedor_info_empresa contenedor_formulario"
+        /*fila 2*/
+        "contenedor_info_empresa contenedor_formulario";
+    /*fila 2*/
+
+}
+
+
+.titulo_contactanos {
+    grid-area: titulo_contactanos;
+    color: white;
+    background-color: red;
+    font-size: 100%;
+}
+
+/* Contenedor principal de datos de la empresa */
+.contenedor_principal-contactanos .contenedor_datos_empresa {
+    grid-area: contenedor_info_empresa;
+    list-style: none;
+    align-items: center;
+    text-align: center;
+    padding: 0px 120px 0px 0px;
+}
+
+/* Contenedor principal formulario */
+.contenedor_principal-contactanos .contenedor_formulario {
+    grid-area: contenedor_formulario;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor_formulario:hover{
+    transform: scale(1.03);
+}
+
+
+
+
+
+/* Texto tiulo descuentos */
+.titulo_contactanos h2 {
+    margin-top: 0px;
+    font-size: 70px;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+
+.contenedor_datos_empresa .item {
+    margin-bottom: 65px;
+}
+
+.contenedor_datos_empresa .item h3 {
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.contenedor_datos_empresa .item span {
+    font-size: 18px;
+}
+
+.iconos_contacto a {
+    padding: 0px 0px 0px 30px;
+    font-size: 24px;
+}
+
+/* fin d epersonalizacion de contenedor de datos de la empresa */
+
+
+
+/* == Personalización del contenedor formulario ===*/
+
+.contenedor_formulario .inputs_cliente {
+    width: 500px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.contenedor_formulario .inputs_cliente input {
+    width: 45%;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid brown;
+    outline-color: slateblue;
+    border-radius: 5px;
+}
+
+.contenedor_formulario textarea {
+    width: 100%;
+    font-size: 20px;
+    height: 300px;
+    padding: 10px;
+    border: 2px solid brown;
+    outline-color: lightgreen;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    resize: none;
+}
+
+.contenedor_formulario button {
+    background: red;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
+
+/* Fin del contenedor formulario */
+
+
+
+/* Preguntas frecuentes  */
+.titulo_principal_preguntas_frecuentes {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: rebeccapurple;
+    width: 400px;
+    height: 80px;
+}
+
+.titulo_principal_preguntas_frecuentes h1 {
+    color: white;
+    font-weight: bold;
+}
+
+
+.contenedor_principal-preguntas-frecuentes {
+    width: 1300px;
+    height: 700px;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: black; */
+}
+
+.contenedor_pregunta-respuesta {
+    background-color: white;
+    width: 400px;
+    height: 200px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    margin-top: 10px;
+    box-shadow: 0px 8px 16px 0px rebeccapurple;
+    border-radius: 10px;
+}
+
+/* Página Terminos y condiciones */
+
+.titulo_principal-terminosCondiciones {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: silver;
+    width: 500px;
+    height: 80px;
+}
+
+.titulo_principal_terminosCondiciones h1 {
+    color: white;
+    font-weight: bold;
+}
+
+.contenedor_terminos-condiciones {
+    width: 780px;
+    height: 680px;
+    margin-left: 30px;
+    margin-bottom: 25px;
+    background-color: white;
+    box-shadow: 0px 8px 16px 2px silver;
+}
+
+/* navbar responsive*/
+@media screen and (max-width: 600px) {
+    .menu_enlaces_navbar {
+        min-width: 320px;
+        width: 100%;
+        max-height: 0;
+        /*Hace que la altura máxima sea 0 al lado del menú expandido.*/
+        overflow: hidden;
+    }
+
+    .lista_enlaces {
+        flex-direction: column;
+        /*Cambia la dirección del contenedor flexible. Por defecto es una fila, así que lo cambiamos a columna en pantallas pequeñas.*/
+        align-items: center;
+        padding: 20px;
+    }
+
+    header {
+        min-width: 320px;
+        width: 100%;
+    }
+
+    .navbar {
+        min-width: 320px;
+        width: 100%;
+        background-color: #0095ff;
+    }
+
+
+    .navbar label {
+        display: inline-flex;
+        /*Lo convierte en un contenedor flexible en línea para el icono. Se utiliza para centrar el icono dentro de este cuadro.*/
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .dropdown-contenedor {
+        position: fixed;
+    }
+
+    #barra_desplegable:checked~.menu_enlaces_navbar {
+        max-height: 600px;
+        margin-right: 5px;
+        margin-left: 10px;
+    }
+}
+
+/* Smartphone modo vertical y horizontal para todas las páginas */
+@media screen and (max-width: 600px) and (min-width: 320px) {
+
+    /* con aaltura aquto se acopla a la redimensacion */
+    .contenedor_principal {
+        display: grid;
+        min-width: 320px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        margin-right: 5px;
+        margin-left: 5px;
+        grid-template-columns: 1fr;
+        background-color: #fff;
+        grid-template-rows: auto auto 100px auto;
+        grid-template-areas:
+            "principal_imagen"
+            "principal_texto"
+            "titulo_novedades"
+            "contenedor_novedades";
+        gap: 10px;
+    }
+
+    /* contenedor de imagen principal */
+    .contenedor_principal-imagen {
+        width: 98%;
+        max-width: 590px;
+        background-color: steelblue;
+    }
+
+    /* contenedor de imagen principal */
+    .contenedor_principal-imagen img {
+        width: 100%;
+        min-width: 320px;
+        max-width: 590px;
+        min-height: 200px;
+        background-color: steelblue;
+    }
+
+    .contenedor_principal-texto {
+        width: 98%;
+        min-width: 320px;
+        max-width: 590px;
+        margin-top: 0px;
+    }
+
+    /* contenedor de texto principal */
+
+    .contenido_principal-texto {
+        font-size: 15px;
+        margin-top: 0px;
+        margin-right: 5px;
+        margin-left: 5px;
+        padding-right: 4px;
+        text-align: start;
+
+    }
+
+    /* contenedor del boton checar */
+    .contenedor_boton_checar {
+        margin-bottom: 30px;
+        margin-right: 20px;
+        margin-left: 5px;
+    }
+    .contenedor_novedades{
+        width: auto;
+        min-width: 320px;
+        max-width: 590px;
+    }
+
+    .card_novedades {
+        background-color: #0095ff;
+        margin-left: 0px;
+        margin-right: 0px;
+        box-shadow: 5px 5px 20px #0095ff;
+    }
+
+    .card-texto_boton {
+        background-color: #0095ff;
+
+    }
+    /* Footer */
+    .contenedor_footer {
+        width: auto;
+        height: auto;
+        min-width: 320px;
+        margin-top: 10px;
+        background-color: red;
+        /* Indicar cuantas columnas tendra */
+        grid-template-columns: 1fr;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            "footer_seccion1_logo"
+            "footer_seccion2_contacto"
+            "footer_cliente"
+            "footer_seccion4_redes";
+    }
+
+    .footer_seccion1_logo {
+        background-color: red;
+        color: white;
+        box-shadow: 4px 8px 16px 10px red;
+    }
+
+    .footer_seccion2_contacto {
+        background-color: red;
+        color: white;
+        box-shadow: 4px 8px 16px 10px red;
+    }
+
+    .footer_cliente {
+        background-color: red;
+        color: white;
+        box-shadow: 4px 8px 16px 10px red;
+    }
+
+    .footer_seccion4_redes {
+        background-color: red;
+        color: white;
+        box-shadow: 4px 8px 16px 10px red;
+
+    }
+
+
+    /* === Pagina descuentos ==== */
+    .contenedor_principal-descuentos-fechas {
+        display: grid;
+        min-width: 320px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        background-color: #0095ff;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas:
+            "titulo_descuentos"
+            "texto_descuentos"
+            "contenedor_descuentos"
+            "titulo_fechas"
+            "contenedor_fechas";
+        gap: 10px;
+    }
+
+    /* Contenedor del titulo principal de descuentos */
+
+    .titulo_descuentos h2 {
+        width: 99%;
+        min-width: 320px;
+        font-size: 40px
+    }
+
+    .informacion_descuentos_fechas {
+        width: 99%;
+        font-size: 16px;
+        text-align: justify;
+        min-width: 320px;
+    }
+
+    .informacion_descuentos_fechas p {
+        padding: 5px;
+    }
+
+    /* contenedor y card de la seccion descuentos */
+    .contenedor_cards_descuentos {
+        width: 100%;
+        min-width: 320px;
+        background-color: #0095ff;
+    }
+
+    .card_descuento {
+        width: 98%;
+        min-width: 320px;
+        background-color: #0095ff;
+    }
+
+    .card_descuento .cobertura_img_card {
+        width: 100%;
+        min-width: 320px;
+    }
+
+    .texto_card_descuento {
+        width: 100%;
+        min-width: 320px;
+        margin-right: 24px;
+    }
+
+    .texto_card_descuento p {
+        margin-right: 34px;
+    }
+
+    .titulo_fechas {
+        width: 99%;
+        min-width: 320px;
+    }
+
+    .titulo_fechas h2 {
+        font-size: 40px;
+    }
+
+    .contenedor_cards_fechas {
+        width: 99%;
+        min-width: 320px;
+
+    }
+
+    .card_fecha {
+        margin-right: 12px;
+        height: auto;
+        width: 100%;
+        border-radius: 20px;
+        min-width: 320px;
+    }
+
+    /* pagina Quienes somos */
+    .contenedor_principal_quienes-somos {
+        display: grid;
+        height: auto;
+        min-width: 320px;
+        overflow: hidden;
+        background-color: #0095ff;
+        /* Indicar cuantas columnas tendra */
+        grid-template-columns: 1fr;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: repeat(6, auto);
+
+        /* acomodar el grid */
+        grid-template-areas:
+            "titulo_QuienesSomos "
+            "texto_conocenos"
+            "titulo_amigoMes"
+            "imagen_amigoEspecial"
+            "titulo_amigos"
+            "contenedor_marcas";
+        gap: 10px;
+    }
+
+    .contenedor_titulo_quienesSomos {
+        background-color: red;
+        font-size: 50px;
+        color: white;
+
+    }
+
+    .conocenos_textos {
+        box-shadow: 4px 2px 4px 3px rgba(0, 0, 0, 0.2);
+        justify-content: center;
+        background-color: white;
+        margin-right: 8px;
+        font-size: 12px;
+    }
+
+    .contenedor_titulo_amigoMes {
+        margin: 10px;
+        justify-content: center;
+    }
+
+    .contenedor_amigoEspecial_instagram {
+        margin-left: 0px;
+        width: auto;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .titulo_amigos {
+        margin-top: 10px;
+        color: white;
+        background-color: red;
+        height: 100px;
+
+    }
+
+
+    /* pagina contactanos */
+    .contenedor_principal-contactanos {
+        display: grid;
+        min-width: 320px;
+        overflow: hidden;
+        margin-top: 60px;
+        margin-right: 5px;
+        margin-left: 5px;
+        grid-template-columns: 1fr;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: auto auto auto;
+
+        /* acomodar el grid */
+        grid-template-areas:
+            "titulo_contactanos "
+            /*fila 1*/
+            "contenedor_info_empresa "
+            /*fila 2*/
+            "contenedor_formulario";
+        /*fila 2*/
+
+    }
+
+    .titulo_contactanos {
+        width: 100%;
+        min-width: 320px;
+        margin-top: 20px;
+    }
+
+    .titulo_contactanos h2 {
+        width: 100%;
+        font-size: 45px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .contenedor_principal-contactanos .contenedor_datos_empresa {
+        width: 100%;
+        min-width: 320px;
+    }
+
+    .contenedor_datos_empresa h3 {
+        margin-left: 70px;
+    }
+
+    .contenedor_datos_empresa span {
+        margin-left: 70px;
+    }
+
+    .contenedor_datos_empresa a {
+        margin-left: 70px;
+    }
+
+    /* Contenedor principal formulario */
+    .contenedor_principal-contactanos .contenedor_formulario {
+        width: 100%;
+        min-width: 320px;
+    }
+
+    .contenedor_formulario form {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        min-width: 320px;
+    }
+
+    .contenedor_formulario button {
+        margin-left: 3px;
+    }
+
+
+
+    /* ==== Contenedor principal de filtro categorias y productos */
+
+    .contenedor_principal-filtroCategorias-listaProductos {
+        display: grid;
+        margin-top: 50px;
+        min-width: 320px;
+        overflow: hidden;
+        gap: 10px;
+        /* Indicar cuantas columnas tendra */
+        grid-template-columns: 1fr;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: auto auto auto;
+
+        grid-template-areas:
+            "titulo_categoria"
+            "filtro_categorias"
+            "contenedor_cards_productos";
+    }
+
+    .titulo_categoria {
+        width: 100%;
+    }
+
+    .titulo_categoria h2 {
+        width: 100%;
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .contenedor_filtroCategorias {
+        width: 97%;
+        min-width: 320px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .contenedor_listaProductos {
+        width: 98%;
+        min-width: 320px;
+        margin-left: 1px;
+    }
+
+    .card_producto_hombre {
+        margin-right: 40px;
+    }
+
+    /* Auste de tamaño de la imagen de cada card */
+    .card_producto_imagen img {
+        margin-right: 40px;
+    }
+
+
+    /* contenedor de boton y texto del card */
+    .card_producto-texto_boton {
+        margin-right: 40px;
+    }
+
+    .card_producto-texto h2 {
+        width: auto;
+        margin-right: 40px;
+
+    }
+
+
+}
+
+/* Smartphone pagina carrito */
+@media screen and (max-width: 530px) and (min-width: 300px) {
+
+    /* con aaltura aquto se acopla a la redimensacion */
+    .carrito-contenedor_principal {
+        display: grid;
+        height: auto;
+        min-width: 300px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        margin: 3px;
+        margin-right: 8px;
+        margin-left: 8px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "texto_carrito"
+            "contenedor_productos"
+            "contenedor_precio_total";
+        gap: 5px;
+    }
+
+    .carrito-texto_principal {
+        background-color: red;
+        color: white;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .carrito-texto_principal h1 {
+        font-size: 40px;
+        font-style: oblique;
+        font-weight: bold;
+    }
+
+    /* Pagina carrito */
+
+    .card_producto {
+        display: grid;
+        width: 99%;
+        min-width: 310px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        min-width: 320px;
+
+        gap: 10px;
+        margin-top: 10px;
+        background-color: white;
+        /* Indicar cuantas columnas tendra */
+        grid-template-columns: 1fr;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: auto auto;
+
+        /* acomodar el grid */
+        grid-template-areas:
+            "contenedor_imagen_producto"
+            "contenedor_texto_productos";
+        /*fila 2*/
+    }
+
+    .carrito_imagen_producto {
+        width: 100%;
+        min-width: 320px;
+        background-color: black;
+    }
+
+    .carrito_imagen_producto img {
+        width: 100%;
+        min-width: 320px;
+    }
+
+    .texto-producto {
+
+        grid-area: contenedor_texto_productos;
+        width: 100%;
+        min-width: 320px;
+    }
+
+    .eliminar_producto {
+        margin-left: 0px;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        text-decoration: none;
+
+    }
+
+    /* contenedor principal del card pagar */
+    .carrito-contenedor_precios {
+        width: auto;
+        margin-left: 0px;
+        border: 1px solid red;
+        border-radius: 5px;
+        margin: 10px;
+
+    }
+}
+
+
+/* páginas index,descuentos,Quienes somos: tablet vertical,telefono horizontal y laptop pequeñas */
+@media screen and (max-width: 890px) and (min-width: 601px) {
+
+    .contenedor_principal {
+        display: grid;
+        height: auto;
+        min-width: 400px;
+        margin-top: 100px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 100px auto auto;
+        grid-template-areas:
+            "principal_imagen principal_texto principal_texto"
+            "titulo_novedades titulo_novedades titulo_novedades"
+            "contenedor_novedades contenedor_novedades contenedor_novedades";
+        gap: 10px;
+    }
+
+    /* contenedor de imagen principal */
+    .contenedor_principal-imagen {
+        margin-bottom: 0px;
+        grid-area: principal_imagen;
+        background-color: steelblue;
+        min-height: 400px;
+    }
+
+    .contenedor_principal-imagen img {
+        height: 100%;
+        min-height: 400px;
+        object-fit: cover;
+    }
+
+    .contenedor_principal-texto h1 {
+        margin-top: 80px;
+    }
+
+    .contenido_principal-texto {
+        font-size: 18px;
+        height: auto;
+        width: 92%;
+    }
+
+    /* pagina descuentos */
+    .contenedor_principal-descuentos-fechas {
+        margin-top: 150px;
+    }
+
+    /* paginas quienes somos */
+    .contenedor_principal_quienes-somos {
+        margin-top: 170px;
+    }
+
+    /* pagina contactanos */
+    .contenedor_principal-contactanos {
+        display: grid;
+        min-width: 300px;
+        overflow: hidden;
+        margin-top: 140px;
+        grid-template-columns: 1fr;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: auto auto auto;
+    }
+
+    .contenedor_principal-contactanos .contenedor_datos_empresa {
+        width: 100%;
+        min-width: 290px;
+    }
+
+    /* Contenedor principal formulario */
+    .contenedor_principal-contactanos .contenedor_formulario {
+        width: 90%;
+        min-width: 320px;
+    }
+
+    .contenedor_formulario form {
+        display: flex;
+        flex-wrap: wrap;
+        width: 97%;
+        margin-right: 30px;
+        min-width: 300px;
+    }
+
+    .contenedor_formulario button {
+        margin-left: 3px;
+    }
+
+    /* pagina contactanos */
+    .titulo_contactanos {
+        margin-top: 10px;
+        width: 100%;
+        min-width: 320px;
+        padding-top: 10px;
+    }
+
+    .titulo_contactanos h2 {
+        width: 100%;
+        font-size: 45px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* ==== Contenedor principal de filtro categorias y productos */
+    .titulo_categoria{
+        margin-top: 50px;
+    }
+    .contenedor_principal-filtroCategorias-listaProductos {
+        width: 100%;
+        height: 100%;
+        margin-top: 100px;
+        gap: 10px;
+        background-color: white;
+        /* Indicar cuantas columnas tendra */
+        grid-template-columns: auto;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: auto auto auto;
+
+        grid-template-areas:
+            "titulo_categoria"
+            "filtro_categorias"
+            "contenedor_cards_productos";
+
+    }
+
+}
+
+/* index: laptops */
+@media screen and (max-width: 1400px) and (min-width: 891px) {
+
+    .contenedor_principal {
+        display: grid;
+        height: auto;
+        min-width: 400px;
+        margin-top: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 100px auto auto;
+        grid-template-areas:
+            "principal_imagen principal_texto principal_texto"
+            "titulo_novedades titulo_novedades titulo_novedades"
+            "contenedor_novedades contenedor_novedades contenedor_novedades";
+        gap: 10px;
+    }
+
+    /* contenedor de imagen principal */
+    .contenedor_principal-imagen {
+        margin-bottom: 0px;
+        grid-area: principal_imagen;
+        background-color: steelblue;
+    }
+
+    .contenido_principal-texto {
+
+        margin-top: 37px;
+
+    }
+}
+
+/* pagina carrito: Tablets */
+@media screen and (max-width: 973px) and (min-width: 501px) {
+
+    /* con aaltura aquto se acopla a la redimensacion */
+    .carrito-contenedor_principal {
+        display: grid;
+        height: auto;
+        min-width: 480px;
+        margin-top: 90px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "texto_carrito"
+            "contenedor_productos"
+            "contenedor_precio_total";
+        gap: 10px;
+    }
+
+    .card_producto {
+        margin-right: 20px;
+    }
+    .carrito-texto_principal{
+        margin-top: 60px;
+        font-size: 10px;
+    }
+
+    /* contenedor de imagen principal */
+    .contenedor_principal-imagen {
+        margin-top: 90px;
+        grid-area: principal_imagen;
+        background-color: steelblue;
+    }
+
+    /* contenedor principal del card pagar */
+    .carrito-contenedor_precios {
+        width: auto;
+        margin-left: 0px;
+        border: 1px solid red;
+        border-radius: 5px;
+        margin-right: 20px;
+
+    }
+
+    .eliminar_producto {
+        text-align: end;
+    }
+
+    /* Footer */
+    .contenedor_footer {
+        display: grid;
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        /* Indicar cuantas columnas tendra */
+        grid-template-columns: 1fr;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            "footer_seccion1_logo"
+            "footer_seccion2_contacto"
+            "footer_cliente"
+            "footer_seccion4_redes";
+    }
+
+    /* pagina quienes somos */
+    .contenedor_amigoEspecial_instagram {
+        margin-right: 20px;
+    }
+
+}
+
+/* paginas Carrito, quienes somos: laptops pequeñas */
+@media screen and (max-width: 1200px) and (min-width: 974px) {
+
+    .card_producto {
+        margin-right: 20px;
+    }
+
+    /* contenedor principal del card pagar */
+    .carrito-contenedor_precios {
+        width: auto;
+        margin-left: 0px;
+        border: 1px solid red;
+        border-radius: 5px;
+        margin-right: 22px;
+
+    }
+
+    .eliminar_producto {
+        text-align: end;
+    }
+
+    /* pagina contactanos */
+    .contenedor_amigoEspecial_instagram {
+        margin-right: 20px;
+    }
+
+    /* pagina productos */
+}

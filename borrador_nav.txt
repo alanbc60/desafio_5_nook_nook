@@ -1,0 +1,89 @@
+    <!-- ============= Cabecera de la página  ============== -->
+    <header>
+        <!-- Contenedor del logo y lista de elementos -->
+        <nav class="navbar">
+            <!-- Fondo del logo y texto -->
+            <div class="logo">
+                <a href="index.html"><b>NOOK NOOK</b></a>
+            </div>
+
+            <!-- creamos un checkbox y lo abrimos al seleccionar el label (responsive)-->
+            <input type="checkbox" id="barra_desplegable">
+            <label for="barra_desplegable">
+                <i class="ri-menu-line"></i>
+            </label>
+            <!-- Fin del contenedor  del label responsive -->
+            <div class="menu_enlaces_navbar">
+                <!-- Lista de enlaces del navbar -->
+                <ul class="lista_enlaces">
+                    <!-- Elemento de lista: productos -->
+                    <li class="dropdown">
+                        <a href="#" class="enlace_item">Productos</a>
+                        <div class="dropdown-contenedor">
+
+                            <ul class="lista_subenlaces">
+                                <!-- productos-hombres -->
+                                <li class="item_hombre" id="mn1">
+                                    <a class="btn" href="#mn1">Hombre</a>
+                                    <!-- Categorias de producstos-hombres -->
+                                    <div class="dropdown_contenedor-categorias">
+                                        <a class="categorias_item"
+                                            href="./pages/seccionProductos/hombre-chamarras.html">Chamarras</a>
+                                        <a class="categorias_item"
+                                            href="./pages/seccionProductos/hombre-playeras.html">Playeras</a>
+                                        <a class="categorias_item"
+                                            href="./pages/seccionProductos/hombre-pantalones.html">Pantalones</a>
+                                    </div>
+                                </li>
+
+                                <!-- priductos- mujeres -->
+                                <li class="item_mujer" id="mn2">
+                                    <a class="btn" href="#mn2">Mujer</a>
+                                    <!-- Categorias de producstos-hombres -->
+                                    <div class="dropdown_contenedor-categorias">
+                                        <a class="categorias_item"
+                                            href="./pages/seccionProductos/hombre-chamarras.html">item 1</a>
+                                        <a class="categorias_item"
+                                            href="./pages/seccionProductos/hombre-playeras.html">item 2</a>
+                                        <a class="categorias_item"
+                                            href="./pages/seccionProductos/hombre-pantalones.html">Pantalones</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </li>
+                    <!-- Fin de elemento de lista : producto -->
+
+
+                    <!-- Elemento de lista carritos -->
+                    <li class="enlace_secciones">
+                        <a class="enlace_item" href="pages/carrito.html"> Carrito </a>
+                    </li>
+                    <!-- Fin de elemento de lista: carrito -->
+
+                    <!-- Elemento de lista fechas & descuentos -->
+                    <li class="enlace_secciones">
+                        <a class="enlace_item" href="pages/fechas_descuentos.html"> Fechas & descuentos </a>
+                    </li>
+                    <!-- Fin de elemento de lista fechas & descuentos -->
+
+                    <!-- Elemento de lista:  Quienes somos-->
+                    <li class="enlace_secciones">
+                        <a class="enlace_item" href="pages/quienes_somos.html"> Quienes somos </a>
+                    </li>
+                    <!-- Fin de elemento de lista: Quienes somos -->
+
+                    <!-- Elemento de lista: contactanos -->
+                    <li class="enlace_secciones">
+                        <a class="enlace_item" href="pages/contactanos.html"> Contactanos </a>
+                    </li>
+                    <!-- Fin de elemento de lista: contactanos -->
+
+                </ul>
+                <!-- Fin de la lista de enlaces en la navbar -->
+            </div>
+        </nav>
+    </header>
+    <!-- ============= fin de cabecera de la página  ============== -->
